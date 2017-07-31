@@ -1,0 +1,22 @@
+.shop__container{
+  border-color: red;
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+}
+.shop__prop{
+  width: 100%;
+  font-size: 18px;
+  font-family: "Myriad Pro";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item__container{
+  border-color: yellow;
+  border-style: solid;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}

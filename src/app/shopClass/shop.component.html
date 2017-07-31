@@ -1,8 +1,10 @@
-<div *ngFor='let shop of shops'>
-  <div>{{shop.id}}</div>
-  <div>{{shop.name}}</div>
-  <div>{{shop.address}}</div>
-  <div>{{shop.startTime}}</div>
-  <div>{{shop.endTime}}</div>
-  <item></item>
+<div *ngFor='let shop of shops' class="shop__container">
+  <div class="shop__prop">
+    <div>{{shop.id}}</div>
+    <div>{{shop.name}}</div>
+    <div>{{shop.address}}</div>
+    <div>{{shop.startTime}}</div>
+    <div>{{shop.endTime}}</div>
+  </div>
+  <item class="item__container"></item>
 </div>
