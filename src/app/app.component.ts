@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Shop } from './shop';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { Shop } from './shop';
 })
 export class AppComponent {
   title = 'Horns and hoofs';
-  shop = Shops[];
 }

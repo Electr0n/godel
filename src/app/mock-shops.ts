@@ -18,7 +18,7 @@ export const SHOPS: Shop[] = [
     endTime: '24:00'
   },
   { 
-    id: 3
+    id: 3,
     name: 'Best perforators for your neighbors',
     address: 'Mashinostroitelej str, 20',
     days: [false, false, false, false, false, true, true],
@@ -51,26 +51,6 @@ export const SHOPS: Shop[] = [
   },
   { 
     id: 7, name: 'Macbooks: make your apple worm happy', address: 'Sharangovicha str, 8', days: [true, true, true, true, true, true, false], startTime: '8:00', 
-      endTime: '20:00'
-  },
-  { 
-    id: 8, name: 'Spiners for beginners', address: 'Suharevskaya streat, 10',
-      days: [true, true, true, true, true, true, false], startTime: '8:00', 
-      endTime: '20:00'
-  },
-  { 
-    id: 9, name: 'Spiners for beginners', address: 'Suharevskaya streat, 10',
-      days: [true, true, true, true, true, true, false], startTime: '8:00', 
-      endTime: '20:00'
-  },
-  { 
-    id: 10, name: 'Spiners for beginners', address: 'Suharevskaya streat, 10',
-      days: [true, true, true, true, true, true, false], startTime: '8:00', 
-      endTime: '20:00'
-  },
-  { 
-    id: 11, name: 'Spiners for beginners', address: 'Suharevskaya streat, 10',
-      days: [true, true, true, true, true, true, false], startTime: '8:00', 
       endTime: '20:00'
   }
 ];
