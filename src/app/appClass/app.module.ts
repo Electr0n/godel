@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ShopComponent} from './shop.component';
-import { ShopService } from './shop.service';
-import { ItemComponent} from './item.component';
-import { ItemService} from './item.service';
+import { ShopComponent} from 'app/shopClass/shop.component';
+import { ShopService } from 'app/shopClass/shop.service';
+import { ItemComponent} from 'app/itemClass/item.component';
+import { ItemService} from 'app/itemClass/item.service';
 
 @NgModule({
   declarations: [
