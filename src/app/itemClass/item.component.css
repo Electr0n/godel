@@ -14,3 +14,22 @@
   border-color: black;
   cursor: pointer;
 }
+.item__btn-add{
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.item__btn-cancel{
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+}
+.item__btn-save{
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: green;
+}

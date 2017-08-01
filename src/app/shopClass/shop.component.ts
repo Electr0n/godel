@@ -44,7 +44,7 @@ export class ShopComponent implements OnInit{
   // toggle shop edit if clicked
   editShop(shop: Shop): void {
     this.editableShop = (this.editableShop === shop) ? undefined : shop;
-    event.stopPropagation()
+    event.stopPropagation();
   }
 
   createShop(): void{

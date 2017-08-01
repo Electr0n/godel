@@ -10,6 +10,7 @@ import { ItemService } from './item.service';
 export class ItemComponent implements OnInit{
   items: Item[];
   editableItem: Item;
+  newItem: Item;
 
   constructor(private itemService: ItemService){}
 
@@ -19,10 +20,42 @@ export class ItemComponent implements OnInit{
 
   ngOnInit(): void{
     this.getItems();
+
+    this.newItem = {
+      id: 0,
+      name: 'name',
+      price: 0
+    }
   }
 
   // toggle item edit
   editItem(item: Item): void{
     this.editableItem = (this.editableItem === item) ? undefined : item;
+    event.stopPropagation();
+  }
+
+  // to prevent propogation when clicking shop's items
+  stubItem(): void{
+    event.stopPropagation();
+  }
+
+  createItem(): void{
+    this.newItem.id = this.items[this.items.length - 1].id + 1;
+    event.stopPropagation();
+  }
+
+  cancelItem(): void{
+    this.newItem.id = 0;
+    event.stopPropagation();
+  }
+
+  saveItem(): void{
+    this.items.push(this.newItem);
+    this.newItem = {
+      id: 0,
+      name: name,
+      price: 0
+    };
+    event.stopPropagation();
   }
 }

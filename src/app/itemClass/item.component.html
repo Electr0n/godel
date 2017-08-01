@@ -1,6 +1,8 @@
 <!-- if item editable show edit template 
 else show item's properties -->
-<div *ngFor="let item of items" class="item__prop">
+<div *ngFor="let item of items"
+  (click)="stubItem()"
+  class="item__prop">
   <div *ngIf="editableItem === item; else showItem">
     <input [(ngModel)]="item.name">
     <input [(ngModel)]="item.price">
@@ -14,4 +16,20 @@ else show item's properties -->
   <div (click)="editItem(item)"
     class="item__prop-edit">
   </div>
+</div>
+<div *ngIf="newItem.id !== 0">
+  <div class="item-new__container">
+    <input [(ngModel)]="newItem.name">
+    <input [(ngModel)]="newItem.price">
+  </div>
+  <div (click)="cancelItem()"
+    class="item__btn-cancel">
+  </div>
+  <div (click)="saveItem()"
+    class="item__btn-save">
+  </div>
+</div>
+<div (click)="createItem()"
+  class="item__btn-add">
+  +
 </div>
