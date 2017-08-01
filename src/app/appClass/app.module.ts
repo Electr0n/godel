@@ -8,6 +8,7 @@ import { ShopService } from 'app/shopClass/shop.service';
 import { ItemComponent } from 'app/itemClass/item.component';
 import { ItemService } from 'app/itemClass/item.service';
 import { DndModule } from 'ng2-dnd';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,10 @@ import { DndModule } from 'ng2-dnd';
   imports: [
     BrowserModule,
     FormsModule,
-    DndModule.forRoot()
+    DndModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAKQqR44qWYyavBzycT8EBQVG5t8cB74ec'
+    })
   ],
   providers: [
     ShopService,

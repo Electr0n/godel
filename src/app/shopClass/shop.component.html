@@ -52,4 +52,25 @@
   <input [(ngModel)]="newShop.address">
   <input [(ngModel)]="newShop.startTime">
   <input [(ngModel)]="newShop.endTime">
+  <!-- map with draggable cursor for new shop -->
+  <agm-map [latitude]=newShop.latitude [longitude]=newShop.longitude>
+    <agm-marker 
+      [latitude]=newShop.latitude
+      [longitude]=newShop.longitude
+      [markerDraggable]="true"
+      (dragEnd)="setCoords($event)">
+    </agm-marker>
+  </agm-map>
+</div>
+
+<!-- map for selected shop -->
+<div *ngIf="selectedShop">
+  <div *ngIf="newShop.id === 0">
+    <agm-map [latitude]=selectedShop.latitude [longitude]=selectedShop.longitude>
+      <agm-marker 
+        [latitude]=selectedShop.latitude
+        [longitude]=selectedShop.longitude>
+      </agm-marker>
+    </agm-map>
+  </div>
 </div>
