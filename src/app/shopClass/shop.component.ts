@@ -48,14 +48,18 @@ export class ShopComponent implements OnInit{
   }
 
   createShop(): void{
-    this.newShop.id = this.shops[this.shops.length - 1].id + 1;
+    if (this.shops.length === 0){
+      this.newShop.id = 1;
+    } else {
+      this.newShop.id = this.shops[this.shops.length - 1].id + 1;
+    }
   }
   cancelShop(): void{
     this.newShop.id = 0;
   }
   saveShop(): void{
-    // this.shops.push(this.newShop);
-    this.shopService.addNewShop(this.newShop);
+    this.shops.push(this.newShop);
+    // this.shopService.addNewShop(this.newShop);
     this.newShop = {
       id: 0,
       name: 'name',
@@ -64,5 +68,12 @@ export class ShopComponent implements OnInit{
       startTime: '0:00',
       endTime: '24:00'
     };
+  }
+  removeShop(shop: Shop): void{
+    for(var i=0; i<this.shops.length; i++){
+      if (this.shops[i].id === shop.id){
+        this.shops.splice(i, 1);
+      }
+    }
   }
 }

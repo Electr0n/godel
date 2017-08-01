@@ -24,6 +24,7 @@ export class ItemComponent implements OnInit{
     this.newItem = {
       id: 0,
       name: 'name',
+      desc: 'description',
       price: 0
     }
   }
@@ -33,29 +34,30 @@ export class ItemComponent implements OnInit{
     this.editableItem = (this.editableItem === item) ? undefined : item;
     event.stopPropagation();
   }
-
   // to prevent propogation when clicking shop's items
   stubItem(): void{
     event.stopPropagation();
   }
-
   createItem(): void{
     this.newItem.id = this.items[this.items.length - 1].id + 1;
     event.stopPropagation();
   }
-
   cancelItem(): void{
     this.newItem.id = 0;
     event.stopPropagation();
   }
-
   saveItem(): void{
     this.items.push(this.newItem);
     this.newItem = {
       id: 0,
-      name: name,
+      name: 'name',
+      desc: 'description',
       price: 0
     };
+    event.stopPropagation();
+  }
+  removeItem(item: Item): void{
+    this.items.splice((item.id - 1), 1);
     event.stopPropagation();
   }
 }
