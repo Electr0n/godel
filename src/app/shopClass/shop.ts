@@ -5,4 +5,6 @@ export class Shop{
   days: boolean[];
   startTime: string;
   endTime: string;
+  latitude: number;
+  longitude: number;
 }

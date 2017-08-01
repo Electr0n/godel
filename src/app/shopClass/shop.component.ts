@@ -32,7 +32,9 @@ export class ShopComponent implements OnInit{
       address: 'address',
       days: [false, false, false, false, false, false, false],
       startTime: '0:00',
-      endTime: '24:00'
+      endTime: '24:00',
+      latitude: 50.678418,
+      longitude: 7.009007
     };
   }
 
@@ -66,7 +68,9 @@ export class ShopComponent implements OnInit{
       address: 'address',
       days: [false, false, false, false, false, false, false],
       startTime: '0:00',
-      endTime: '24:00'
+      endTime: '24:00',
+      latitude: 50.678418,
+      longitude: 7.009007
     };
   }
   removeShop(shop: Shop): void{
@@ -75,5 +79,10 @@ export class ShopComponent implements OnInit{
         this.shops.splice(i, 1);
       }
     }
+  }
+  // set coords for new shop
+  setCoords(event: any): void{
+    this.newShop.latitude = event.coords.lat;
+    this.newShop.longitude = event.coords.lng;
   }
 }
