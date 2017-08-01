@@ -8,4 +8,8 @@ export class ShopService{
   getShops(): Shop[] {
     return SHOPS;
   }
+
+  addNewShop(newShop): void {
+  	SHOPS.push(newShop);
+  }
 }

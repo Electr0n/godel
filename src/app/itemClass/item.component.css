@@ -1,8 +1,16 @@
-.item__props{
+.item__prop{
   border-color: blue;
   border-style: solid;
   border-radius: 2px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.item__prop-edit{
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
 }

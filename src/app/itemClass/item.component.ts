@@ -9,6 +9,7 @@ import { ItemService } from './item.service';
 })
 export class ItemComponent implements OnInit{
   items: Item[];
+  editableItem: Item;
 
   constructor(private itemService: ItemService){}
 
@@ -18,5 +19,10 @@ export class ItemComponent implements OnInit{
 
   ngOnInit(): void{
     this.getItems();
+  }
+
+  // toggle item edit
+  editItem(item: Item): void{
+    this.editableItem = (this.editableItem === item) ? undefined : item;
   }
 }

@@ -1,5 +1,17 @@
-<div *ngFor="let item of items" class="item__props">
-  <div>{{item.id}}</div>
-  <div>{{item.name}}</div>
-  <div>{{item.price}}</div>
+<!-- if item editable show edit template 
+else show item's properties -->
+<div *ngFor="let item of items" class="item__prop">
+  <div *ngIf="editableItem === item; else showItem">
+    <input [(ngModel)]="item.name">
+    <input [(ngModel)]="item.price">
+  </div>
+  <ng-template #showItem>
+    <div>{{item.id}}</div>
+    <div>{{item.name}}</div>
+    <div>{{item.price}}</div>
+  </ng-template>
+  <!-- edit btn -->
+  <div (click)="editItem(item)"
+    class="item__prop-edit">
+  </div>
 </div>

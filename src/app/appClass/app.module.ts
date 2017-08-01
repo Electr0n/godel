@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ShopComponent} from 'app/shopClass/shop.component';
@@ -14,7 +15,8 @@ import { ItemService} from 'app/itemClass/item.service';
     ItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     ShopService,

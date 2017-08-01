@@ -12,6 +12,39 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
+}
+.shop__prop-edit{
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+}
+.shop__btn-add{
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  cursor: pointer;
+}
+.shop__btn-cancel{
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+  cursor: pointer;
+}
+.shop__btn-save{
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: green;
+  cursor: pointer;
 }
 .item__container{
   border-color: yellow;
