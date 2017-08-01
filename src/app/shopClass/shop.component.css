@@ -46,6 +46,15 @@
   border-color: green;
   cursor: pointer;
 }
+.shop__btn-remove{
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+  background-color: red;
+  cursor: pointer;
+}
 .item__container{
   border-color: yellow;
   border-style: solid;

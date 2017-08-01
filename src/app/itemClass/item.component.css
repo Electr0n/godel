@@ -33,3 +33,12 @@
   border-width: 1px;
   border-color: green;
 }
+.item__btn-remove{
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+  background-color: red;
+  cursor: pointer;
+}

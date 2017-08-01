@@ -1,36 +1,43 @@
 <!-- open shop's items if clicked-->
-<div *ngFor='let shop of shops'
-  class="shop__container"
-  (click)="onSelect(shop)"
-  [class.selected]="shop === selectedShop">
-  <!-- if pressed edit btn then show edit template
-  else show shop's properties -->
-  <div class="shop__prop">  
-    <div *ngIf="editableShop === shop; else showShop">
-      <input [(ngModel)]="shop.name">
-      <input [(ngModel)]="shop.address">
-      <input [(ngModel)]="shop.startTime">
-      <input [(ngModel)]="shop.endTime">
+<div dnd-sortable-container [sortableData]="shops">
+  <div *ngFor="let shop of shops; let i = index"
+    dnd-sortable [sortableIndex]="i"
+    class="shop__container"
+    (click)="onSelect(shop)"
+    [class.selected]="shop === selectedShop">
+    <!-- if pressed edit btn then show edit template
+    else show shop's properties -->
+    <div class="shop__prop">  
+      <div *ngIf="editableShop === shop; else showShop">
+        <input [(ngModel)]="shop.name">
+        <input [(ngModel)]="shop.address">
+        <input [(ngModel)]="shop.startTime">
+        <input [(ngModel)]="shop.endTime">
+      </div>
+      <ng-template #showShop>
+        <div>{{i + 1}}</div>
+        <div>{{shop.name}}</div>
+        <div>{{shop.address}}</div>
+        <div>{{shop.startTime}}</div>
+        <div>{{shop.endTime}}</div>
+      </ng-template>
+      <!-- edit btn -->
+      <div (click)="editShop(shop)"
+        class="shop__prop-edit">
+      </div>
+      <div (click)="removeShop(shop)"
+        class="shop__btn-remove">
+      </div>
     </div>
-    <ng-template #showShop>
-      <div>{{shop.id}}</div>
-      <div>{{shop.name}}</div>
-      <div>{{shop.address}}</div>
-      <div>{{shop.startTime}}</div>
-      <div>{{shop.endTime}}</div>
-    </ng-template>
-    <!-- edit btn -->
-    <div (click)="editShop(shop)"
-      class="shop__prop-edit">
+    <!-- prevent showing shop's items if shop is editable -->
+    <div *ngIf="editableShop !== shop">
+      <item *ngIf="selectedShop === shop"
+        class="item__container">
+      </item>
     </div>
-  </div>
-  <!-- prevent showing shop's items if shop is editable -->
-  <div *ngIf="editableShop !== shop">
-    <item *ngIf="selectedShop === shop"
-      class="item__container">
-    </item>
   </div>
 </div>
+
 <div (click)="createShop()"
   class="shop__btn-add">
 </div>

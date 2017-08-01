@@ -5,21 +5,27 @@ else show item's properties -->
   class="item__prop">
   <div *ngIf="editableItem === item; else showItem">
     <input [(ngModel)]="item.name">
+    <input [(ngModel)]="item.desc">
     <input [(ngModel)]="item.price">
   </div>
   <ng-template #showItem>
     <div>{{item.id}}</div>
     <div>{{item.name}}</div>
+    <div>{{item.desc}}</div>
     <div>{{item.price}}</div>
   </ng-template>
   <!-- edit btn -->
   <div (click)="editItem(item)"
     class="item__prop-edit">
   </div>
+  <div (click)="removeItem(item)"
+    class="item__btn-remove">
+  </div>
 </div>
 <div *ngIf="newItem.id !== 0">
   <div class="item-new__container">
     <input [(ngModel)]="newItem.name">
+    <input [(ngModel)]="newItem.desc">
     <input [(ngModel)]="newItem.price">
   </div>
   <div (click)="cancelItem()"

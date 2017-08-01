@@ -9,7 +9,7 @@ export class ShopService{
     return SHOPS;
   }
 
-  addNewShop(newShop): void {
-  	SHOPS.push(newShop);
-  }
+  // addNewShop(newShop): void {
+  // 	SHOPS.push(newShop);
+  // }
 }
