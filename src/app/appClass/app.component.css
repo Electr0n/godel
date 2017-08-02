@@ -1,0 +1,13 @@
+header{
+  background-color: #28363d;
+  height: 120px;
+  width: 100%;
+  font-size: 28px;
+  font-family: "Myriad Pro";
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}

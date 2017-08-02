@@ -61,7 +61,6 @@ export class ShopComponent implements OnInit{
   }
   saveShop(): void{
     this.shops.push(this.newShop);
-    // this.shopService.addNewShop(this.newShop);
     this.newShop = {
       id: 0,
       name: 'name',
@@ -82,7 +81,12 @@ export class ShopComponent implements OnInit{
   }
   // set coords for new shop
   setCoords(event: any): void{
-    this.newShop.latitude = event.coords.lat;
-    this.newShop.longitude = event.coords.lng;
+    if (this.editableShop){
+      this.editableShop.latitude = event.coords.lat;
+      this.editableShop.longitude = event.coords.lng;
+    } else {
+      this.newShop.latitude = event.coords.lat;
+      this.newShop.longitude = event.coords.lng;
+    }
   }
 }

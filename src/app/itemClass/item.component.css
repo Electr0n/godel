@@ -1,44 +1,122 @@
 .item__prop{
-  border-color: blue;
+  min-width: 320px;
+  max-width: 1024px;
+  width: auto;
+  min-height: 40px;
+  font-family: "Mariad Pro";
+  color: #5E3309;
+  border-color: #28363d;
   border-style: solid;
-  border-radius: 2px;
+  border-width: 1px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.item__prop-edit{
-  width: 20px;
-  height: 20px;
-  border-width: 1px;
+.item__edit-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item__info-edit{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.item__info-edit input{
+  font-family: "Mariad Pro";
+  font-size: 18px;
+  justify-content: center;
+  align-content: center;
+}
+.item__btns-side{
+  display: flex;
+  flex-direction: row;
+}
+.item__id, .item__name, .item__desc, .item__price{
+  min-height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 0px;
+  border-right-width: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: #28363d;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item__info{
+  display: flex;
+  flex-direction: row;
+}
+.item__prop-edit{
+  width: 50px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("img/btn-edit.png");
+}
+.item__prop-save{
+  width: 50px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("img/btn-save.png");
+}
+.item__btn-remove{
+  width: 50px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("img/btn-rm.png");
+}
+.item__id{
+  width: 60px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.item__name{
+  width: 100px;
+}
+.item__desc{
+  width: 450px;
+}
+.item__price{
+  width: 100px;
+}
+.item__btns{
+  width: 320px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.item__btn-add, .item__btn-cancel, .item__btn-save{
+  width: 48px;
+  height: 48px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-size: 48px;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 .item__btn-add{
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
+  background-image: url("img/btn-add.png");
 }
 .item__btn-cancel{
-  width: 20px;
-  height: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: red;
+  background-image: url("img/btn-cancel.png");
 }
 .item__btn-save{
-  width: 20px;
-  height: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: green;
+  background-image: url("img/btn-save.png");
 }
-.item__btn-remove{
-  width: 20px;
-  height: 20px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: red;
-  background-color: red;
-  cursor: pointer;
+.item-new__container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.item-new__container input{
+  font-size: 20px;
+  font-family: "Mariad Pro";
 }
