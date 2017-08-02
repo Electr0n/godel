@@ -1,66 +1,158 @@
-.shop__container{
-  border-color: red;
+.content__container{
+  min-width: 320px;
+  max-width: 1024px;
+  width: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.shops__container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.shops__container-details{
+  min-height: 60px;
+  border-color: #28363d;
   border-style: solid;
   border-width: 2px;
+  border-bottom-width: 4px;
+  margin-bottom: 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 .shop__prop{
-  width: 100%;
+  min-width: 320px;
+  max-width: 1024px;
+  width: auto;
+  height: 100%;
   font-size: 18px;
   font-family: "Myriad Pro";
+  color: #28363d;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+  position: relative;
+  justify-content: space-between;
 }
-.shop__prop-edit{
-  width: 20px;
-  height: 20px;
-  border-width: 1px;
+.shop__info, .shop__btns{
+  display: flex;
+  flex-direction: row;
+}
+.shop__info{
+  width: 100%;
+}
+.shop__id, .shop__name, .shop__address, .shop__time{
+  min-height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 0px;
+  border-right-width: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: #28363d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop__info-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+}
+.shop__info-edit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.shop__info-edit input{
+  font-family: "Mariad Pro";
+  font-size: 15px;
+}
+.shop__btns-side{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.shop__id{
+  width: 60px;
+}
+.shop__name{
+  width: 250px;
+}
+.shop__address{
+  width: 200px;
+}
+.shop__time{
+  width: 50px;
+}
+.shop__btn-edit, .shop__btn-remove, .shop__btn-save-sm{
+  width: 50px;
+  height: 24px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.shop__btn-edit{
+  background-image: url("img/btn-edit.png");
+}
+.shop__btn-remove{
+  background-image: url("img/btn-rm.png");
+}
+.shop__btn-save-sm{
+  background-image: url("img/btn-save.png");
+}
+.shop__btns{
+  width: 320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.shop__btn-add, .shop__btn-cancel, .shop__btn-save{
+  width: 48px;
+  height: 48px;
+  padding: 20px;
+  background-size: 48px;
+  background-repeat: no-repeat;
   cursor: pointer;
 }
 .shop__btn-add{
-  width: 20px;
-  height: 20px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: black;
-  cursor: pointer;
+  background-image: url("img/btn-add.png");
 }
 .shop__btn-cancel{
-  width: 20px;
-  height: 20px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: red;
-  cursor: pointer;
+  background-image: url("img/btn-cancel.png");
 }
 .shop__btn-save{
-  width: 20px;
-  height: 20px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: green;
-  cursor: pointer;
+  background-image: url("img/btn-save.png");
 }
-.shop__btn-remove{
-  width: 20px;
-  height: 20px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: red;
-  background-color: red;
-  cursor: pointer;
-}
-.item__container{
-  border-color: yellow;
-  border-style: solid;
-  border-radius: 2px;
+.shop__new{
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.new-shop__inputs{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.new-shop__inputs input{
+  font-family: "Mariad Pro";
+  font-size: 20px;
+}
+
+.item__container{
+  min-width: 320px;
+  max-width: 1024px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 agm-map {
   height: 500px;
