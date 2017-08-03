@@ -3,6 +3,19 @@
   <div dnd-sortable-container 
     [sortableData]="shops"
     class="shops__container">
+    <div class="shops__container-head">
+      <div class="shop__prop">
+        <div class="shop__id">id</div>
+        <div class="shop__wrapper-center">
+          <div class="shop__name">name</div>
+          <div class="shop__address">address</div>  
+        </div>
+        <div class="shop__wrapper-right">  
+          <div class="shop__schedule-head">schedule</div>
+          <div class="shop__btn-edit-head">edit</div>
+        </div>
+      </div>
+    </div>
     <div *ngFor="let shop of shops; let i = index"
       dnd-sortable [sortableIndex]="i"
       class="shops__container-details"
@@ -31,7 +44,7 @@
               <div *ngFor="let day of shop.days; let i = index">
                 <input type="checkbox" 
                 [checked]="day"
-                (mouseup)="changeSchedule(!day, i)" />
+                (mousedown)="changeSchedule(!day, i)" />
               </div>
             </div>
           </div>
@@ -122,7 +135,7 @@
           <div *ngFor="let day of newShop.days; let i = index">
             <input type="checkbox" 
             [checked]="day"
-            (mouseup)="changeSchedule(!day, i)" />
+            (mousedown)="changeSchedule(!day, i)" />
           </div>
         </div>
       </div>

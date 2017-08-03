@@ -1,4 +1,4 @@
-.item__prop{
+.item__prop, .item__prop-head{
   min-width: 320px;
   max-width: 1024px;
   width: auto;
@@ -13,6 +13,10 @@
   align-self: stretch;
   justify-content: space-between;
 }
+.item__prop-head{
+  font-weight: bold;
+  color: #610303;
+}
 .item__edit-container{
   width: 100%;
   display: flex;
@@ -25,6 +29,10 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+}
+.item__wrapper-left{
+  display: flex;
+  flex-direction: row;
 }
 .item__info-edit{
   width: 100%;
@@ -45,30 +53,59 @@
   flex-direction: row;
   align-self: flex-end;
 }
-.item__id, .item__name, .item__desc, .item__price{
-  min-height: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
+.item__id, .item__name, .item__price{
+  min-height: 50px;
   border-width: 0px;
   border-right-width: 1px;
   border-style: solid;
   border-color: #28363d;
-  padding-top: 10px;
-  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.item__price{
+  border-width: 0px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-color: #28363d;
+}
+.item__id{
+  width: 60px;
+}
+.item__name{
+  width: 100px;
+}
+.item__desc{
+  display: flex;
+  align-items: center;
+}
+.item__price{
+  min-width: 70px;
+  width: 70px;
+}
 .item__info{
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-content: stretch;
+  align-self: stretch;
 }
 .item__prop-edit{
+  min-width: 50px;
   width: 50px;
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
   background-image: url("img/btn-edit.png");
+}
+.item__prop-edit-head{
+  min-width: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .item__prop-save, .item__btn-remove{
   width: 50px;
@@ -86,20 +123,6 @@
 
 .item__btn-remove{
   background-image: url("img/btn-rm.png");
-}
-.item__id{
-  width: 60px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-.item__name{
-  width: 100px;
-}
-.item__desc{
-  width: 450px;
-}
-.item__price{
-  width: 100px;
 }
 .item__btns{
   width: 320px;

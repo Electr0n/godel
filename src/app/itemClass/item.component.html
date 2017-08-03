@@ -1,5 +1,16 @@
 <!-- if item editable show edit template 
 else show item's properties -->
+<div class="item__prop-head">
+  <div class="item__info">
+    <div class="item__wrapper-left">
+      <div class="item__id">id</div>
+      <div class="item__name">name</div>
+    </div>
+    <div class="item__desc">description</div>
+    <div class="item__price">price</div>
+  </div>
+  <div class="item__prop-edit-head">edit</div>
+</div>
 <div *ngFor="let item of items"
   (click)="stubItem()"
   class="item__prop">
@@ -37,8 +48,10 @@ else show item's properties -->
   </div>
   <ng-template #showItem>
     <div class="item__info">
-      <div class="item__id">{{item.id}}</div>
-      <div class="item__name">{{item.name}}</div>
+      <div class="item__wrapper-left">
+        <div class="item__id">{{item.id}}</div>
+        <div class="item__name">{{item.name}}</div>
+      </div>
       <div class="item__desc">{{item.desc}}</div>
       <div class="item__price">{{item.price}} $</div>
     </div>
