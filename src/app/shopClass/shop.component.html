@@ -13,8 +13,8 @@
       <div class="shop__prop">
         <div *ngIf="editableShop === shop; else showShop"
           class="shop__info-container">
+          <div class="shop__id">{{i + 1}}</div>
           <div class="shop__info-edit">
-            <div class="shop__id">{{i + 1}}</div>
             <div>
               <input [(ngModel)]="shop.name">
             </div>
@@ -26,6 +26,13 @@
               </div>
             <div>
               <input [(ngModel)]="shop.endTime">
+            </div>
+            <div class="shop__edit-days">
+              <div *ngFor="let day of shop.days; let i = index">
+                <input type="checkbox" 
+                [checked]="day"
+                (mouseup)="changeSchedule(!day, i)" />
+              </div>
             </div>
           </div>
           <div class="shop__btns-side">
@@ -39,19 +46,31 @@
         </div>
         <ng-template #showShop>
           <div class="shop__id">{{i + 1}}</div>
-          <div class="shop__name">{{shop.name}}</div>
-          <div class="shop__address">{{shop.address}}</div>
-          <div class="shop__time">{{shop.startTime}}</div>
-          <div class="shop__time">{{shop.endTime}}</div>
-        </ng-template>
-        <!-- edit btn -->
-        <div class="shop__btns-side">
-          <ng-container *ngIf="editableShop !== shop">
-            <div (click)="editShop(shop)"
-              class="shop__btn-edit">
+          <div class="shop__wrapper-center">
+            <div class="shop__name">{{shop.name}}</div>
+            <div class="shop__address">{{shop.address}}</div>  
+          </div>
+          <div class="shop__wrapper-right">  
+            <div class="shop__schedule">
+              <div class="shop__time">{{shop.startTime}}-{{shop.endTime}}</div>
+              <div class="shop__days">
+                <div *ngFor="let day of shop.days">
+                  <ng-container *ngIf="day; else weekend_block">
+                    <div class="shop__days-work"></div>
+                  </ng-container>
+                  <ng-template #weekend_block>
+                    <div class="shop__days-weekend"></div>
+                  </ng-template>
+                </div>
+              </div>
             </div>
-          </ng-container>
-        </div>
+            <ng-container *ngIf="editableShop !== shop">
+              <div (click)="editShop(shop)"
+                class="shop__btn-edit">
+              </div>
+            </ng-container>
+          </div>
+        </ng-template>
       </div>
       <!-- prevent showing shop's items if shop is editable -->
       <div *ngIf="editableShop !== shop">
@@ -99,6 +118,13 @@
         <input [(ngModel)]="newShop.address">
         <input [(ngModel)]="newShop.startTime">
         <input [(ngModel)]="newShop.endTime">
+        <div class="shop__edit-days">
+          <div *ngFor="let day of newShop.days; let i = index">
+            <input type="checkbox" 
+            [checked]="day"
+            (mouseup)="changeSchedule(!day, i)" />
+          </div>
+        </div>
       </div>
       <!-- map with draggable cursor for new shop -->
       <agm-map [latitude]=newShop.latitude [longitude]=newShop.longitude>

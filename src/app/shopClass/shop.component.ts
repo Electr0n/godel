@@ -54,6 +54,7 @@ export class ShopComponent implements OnInit{
       this.newShop.id = 1;
     } else {
       this.newShop.id = this.shops[this.shops.length - 1].id + 1;
+      this.editableShop = undefined;
     }
   }
   cancelShop(): void{
@@ -87,6 +88,13 @@ export class ShopComponent implements OnInit{
     } else {
       this.newShop.latitude = event.coords.lat;
       this.newShop.longitude = event.coords.lng;
+    }
+  }
+  changeSchedule(flag: boolean, index: number): void{
+    if (this.editableShop){
+      this.editableShop.days[index]=flag;
+    } else {
+      this.newShop.days[index]=flag;
     }
   }
 }

@@ -7,29 +7,31 @@ else show item's properties -->
     class="item__edit-container">
     <div class="item__info-edit">
       <div class="item__id">{{item.id}}</div>
-      <div>
-        <input [(ngModel)]="item.name">
-      </div>
-      <div>
-        <input [(ngModel)]="item.desc">
-      </div>
-      <div>
-        <input [(ngModel)]="item.price">
-      </div>
-    </div>
-    <div class="item__btns-side">
-      <ng-container *ngIf="editableItem === item">
-        <div (click)="editItem(item)"
-          class="item__prop-save">
+      <div class="item__wrapper-center">
+        <div>
+          <input [(ngModel)]="item.name">
         </div>
-      </ng-container>
-      <ng-template #save_btn>
-        <div (click)="editItem(item)"
-          class="item__prop-edit">
+        <div>
+          <input [(ngModel)]="item.desc">
         </div>
-      </ng-template>
-      <div (click)="removeItem(item)"
-        class="item__btn-remove">
+        <div>
+          <input [(ngModel)]="item.price">
+        </div>
+      </div>
+      <div class="item__btns-side">
+        <ng-container *ngIf="editableItem === item">
+          <div (click)="editItem(item)"
+            class="item__prop-save">
+          </div>
+        </ng-container>
+        <ng-template #save_btn>
+          <div (click)="editItem(item)"
+            class="item__prop-edit">
+          </div>
+        </ng-template>
+        <div (click)="removeItem(item)"
+          class="item__btn-remove">
+        </div>
       </div>
     </div>
   </div>
