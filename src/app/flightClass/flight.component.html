@@ -44,7 +44,7 @@
     </div>
   </div>
   <ng-container *ngIf="flightStatus === 'departure'">
-    <div *ngFor="let flight of flightsOut | orderBy: sortedColumn : sortedReverse | paginate: { itemsPerPage: 15, currentPage: p }; let i = index">
+    <div *ngFor="let flight of flightsOut | orderBy: sortedColumn : sortedReverse | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
       <div class="wrapper">
         <div class="flight__container">
           <div class="flight__container-index">{{i + 1}}</div>
@@ -84,7 +84,7 @@
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </ng-container>
   <ng-container *ngIf="flightStatus === 'arrival'">
-    <div *ngFor="let flight of flightsIn | orderBy: sortedColumn : sortedReverse | paginate: { itemsPerPage: 15, currentPage: p }; let i = index">
+    <div *ngFor="let flight of flightsIn | orderBy: sortedColumn : sortedReverse | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
       <div class="wrapper">
         <div class="flight__container">
           <div class="flight__container-index">{{i + 1}}</div>

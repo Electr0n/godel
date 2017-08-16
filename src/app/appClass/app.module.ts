@@ -7,8 +7,6 @@ import { FlightComponent } from 'app/flightClass/flight.component';
 import { FlightService } from 'app/flightClass/flight.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
-// import { DndModule } from 'ng2-dnd';
-// import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -20,10 +18,6 @@ import { OrderModule } from 'ngx-order-pipe';
     FormsModule,
     NgxPaginationModule,
     OrderModule
-    // DndModule.forRoot(),
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyAKQqR44qWYyavBzycT8EBQVG5t8cB74ec'
-    // })
   ],
   providers: [
     FlightService
