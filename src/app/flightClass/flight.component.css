@@ -47,6 +47,7 @@
   border-color: #28363d;
   border-width: 0px;
   border-right-width: 1px;
+  cursor: pointer;
 }
 .flight__container-name{
   width: 370px;
@@ -89,4 +90,7 @@
 }
 .pressed{
   background-color: #4f061a;
+}
+.sorted{
+  background-color: #ede5b6;
 }

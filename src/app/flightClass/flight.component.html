@@ -14,21 +14,42 @@
   <div class="flight__container-header">
     <div class="flight__container-index">№</div>
     <div class="flight__container-wrapper_center">
-      <div class="flight__container-status">Status</div>
-      <div class="flight__container-wrapper_inner">
-        <div class="flight__container-terminal">Terminal</div>
-        <div class="flight__container-name">Name</div>
+      <div class="flight__container-status"
+        (click)="switchSort('status')"
+        [ngClass]="{'sorted': sortedColumn === 'status'}">
+        Status
       </div>
-      <div class="flight__container-gate">Gate</div>
+      <div class="flight__container-wrapper_inner">
+        <div class="flight__container-terminal"
+          (click)="switchSort('terminal')"
+          [ngClass]="{'sorted': sortedColumn === 'terminal'}">
+          Terminal
+        </div>
+        <div class="flight__container-name"
+          (click)="switchSort('apname')"
+          [ngClass]="{'sorted': sortedColumn === 'apname'}">
+          Name
+        </div>
+      </div>
+      <div class="flight__container-gate"
+        (click)="switchSort('gate')"
+        [ngClass]="{'sorted': sortedColumn === 'gate'}">
+        Gate
+      </div>
     </div>
-    <div class="flight__container-time">Time</div>
+    <div class="flight__container-time"
+      (click)="switchSort('sched')"
+      [ngClass]="{'sorted': sortedColumn === 'sched'}">
+      Time
+    </div>
   </div>
   <ng-container *ngIf="flightStatus === 'departure'">
-    <div *ngFor="let flight of flightsOut | paginate: { itemsPerPage: 15, currentPage: p }; let i = index">
+    <div *ngFor="let flight of flightsOut | orderBy: sortedColumn : sortedReverse | paginate: { itemsPerPage: 15, currentPage: p }; let i = index">
       <div class="wrapper">
         <div class="flight__container">
           <div class="flight__container-index">{{i + 1}}</div>
-          <div class="flight__container-status">
+          <div class="flight__container-status"
+            [ngClass]="{'sorted': sortedColumn === 'status'}">
             <ng-container *ngIf="flight.status !== ''; else noData">
               {{flight.status}}
             </ng-container>
@@ -36,33 +57,50 @@
               N/A
             </ng-template>
           </div>
-          <div class="flight__container-terminal">{{flight.terminal}}</div>
-          <div class="flight__container-name">{{flight.apname}}</div>
-          <div class="flight__container-gate">
-            <ng-container *ngIf="flight.gate !== ''; else noData">
-              {{flight.gate}}
-            </ng-container>
-            <ng-template #noData>
-              N/A
-            </ng-template>
+          <div class="flight__container-terminal"
+            [ngClass]="{'sorted': sortedColumn === 'terminal'}">
+            {{flight.terminal}}
           </div>
-          <div class="flight__container-time">{{flight.sched.substring(11, 16)}}</div>
+          <div class="flight__container-name"
+            [ngClass]="{'sorted': sortedColumn === 'apname'}">
+            {{flight.apname}}
+          </div>
+          <div class="flight__container-gate"
+            [ngClass]="{'sorted': sortedColumn === 'gate'}">
+              <ng-container *ngIf="flight.gate !== ''; else noData">
+                {{flight.gate}}
+              </ng-container>
+              <ng-template #noData>
+                N/A
+              </ng-template>
+          </div>
+          <div class="flight__container-time"
+            [ngClass]="{'sorted': sortedColumn === 'sched'}">
+            {{flight.sched.substring(11, 16)}}
+          </div>
         </div>
       </div>
     </div>
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </ng-container>
   <ng-container *ngIf="flightStatus === 'arrival'">
-    <div *ngFor="let flight of flightsIn | paginate: { itemsPerPage: 15, currentPage: p }; let i = index">
+    <div *ngFor="let flight of flightsIn | orderBy: sortedColumn : sortedReverse | paginate: { itemsPerPage: 15, currentPage: p }; let i = index">
       <div class="wrapper">
         <div class="flight__container">
           <div class="flight__container-index">{{i + 1}}</div>
-          <div class="flight__container-status">
+          <div class="flight__container-status"
+            [ngClass]="{'sorted': sortedColumn === 'status'}">
             N/A
           </div>
-          <div class="flight__container-terminal">{{flight.terminal}}</div>
-          <div class="flight__container-name">{{flight.apname}}</div>
-          <div class="flight__container-gate">
+          <div class="flight__container-terminal"
+            [ngClass]="{'sorted': sortedColumn === 'terminal'}">{{flight.terminal}}
+            </div>
+          <div class="flight__container-name"
+            [ngClass]="{'sorted': sortedColumn === 'apname'}">
+            {{flight.apname}}
+          </div>
+          <div class="flight__container-gate"
+            [ngClass]="{'sorted': sortedColumn === 'gate'}">
             <ng-container *ngIf="flight.gate !== ''; else noData">
               {{flight.gate}}
             </ng-container>
@@ -70,7 +108,10 @@
               N/A
             </ng-template>
           </div>
-          <div class="flight__container-time">{{flight.sched.substring(11, 16)}}</div>
+          <div class="flight__container-time"
+            [ngClass]="{'sorted': sortedColumn === 'sched'}">
+            {{flight.sched.substring(11, 16)}}
+          </div>
         </div>
       </div>
     </div>
