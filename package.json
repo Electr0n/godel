@@ -24,11 +24,14 @@
     "@angular/router": "^4.0.0",
     "angular-reverse-geocode": "^1.0.0",
     "angular-reverse-geocode-assemany": "^1.0.1",
+    "angular-sortablejs": "^2.0.6",
     "core-js": "^2.4.1",
     "ng2-dnd": "^4.2.0",
     "ng2-drag-drop": "^2.5.0",
+    "ngx-order-pipe": "^1.0.2",
     "ngx-pagination": "^3.0.1",
     "rxjs": "^5.4.1",
+    "sortablejs": "^1.6.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

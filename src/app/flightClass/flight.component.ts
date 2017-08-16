@@ -12,6 +12,8 @@ export class FlightComponent implements OnInit{
   flightsOut: Flight[];
   flightsIn: Flight[];
   p: number = 1;
+  sortedColumn: string;
+  sortedReverse: boolean;
   
   constructor(private flightService: FlightService){}
 
@@ -32,9 +34,23 @@ export class FlightComponent implements OnInit{
     if (this.flightStatus === undefined){
       this.flightStatus = 'arrival';
     }
+    if (this.sortedColumn === undefined){
+      this.sortedColumn = 'apname';
+    }
+    if (this.sortedReverse === undefined){
+      this.sortedReverse = false;
+    }
   }
 
   switchTab(s: string): void {
     this.flightStatus = s;
+  }
+
+  switchSort(str: string): void{
+    if (this.sortedColumn === str){
+      this.sortedReverse = !this.sortedReverse;
+    } else {
+      this.sortedColumn = str;
+    }
   }
 }
