@@ -5,15 +5,11 @@ import { FLIGHTS } from './mock-flights';
 
 @Injectable()
 export class FlightService{
-  getFlights(): Flight[] {
-    return FLIGHTS;
+  
+  getFlightsOut(): Flight[] {
+    return FLIGHTS.filter(f => f.type === 'departure');
   }
-  // getFlightsOut(): Flight[] {
-  //   FLIGHTS.filter(f => f.flstatus === 1)
-  //   return FLIGHTS;
-  // }
-  // getFlightsIN(): Flight[] {
-  //   FLIGHTS.filter(f => f.flstatus === 2)
-  //   return FLIGHTS;
-  // }
+  getFlightsIn(): Flight[] {
+    return FLIGHTS.filter(f => f.type === 'arrival');
+  }
 }
