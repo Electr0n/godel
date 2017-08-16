@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="flight__container">
+    <div>№</div>
+    <div>Name</div>
+    <div>Status</div>
+    <div>Terminal</div>
+    <div>Time</div>
+    <div>Halle</div>
+  </div>
+</div>
+<div *ngFor="let flight of flights; let i = index">
+  <div class="wrapper">
+    <div class="flight__container">
+      <div>{{i + 1}}</div>
+      <div>{{flight.apname}}</div>
+      <div>{{flight.status}}</div>
+      <div>{{flight.terminal}}</div>
+      <div>{{flight.sched}}</div>
+      <div>{{flight.halle}}</div>
+    </div>
+  </div>
+</div>

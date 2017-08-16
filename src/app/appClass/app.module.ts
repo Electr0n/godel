@@ -3,18 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ShopComponent } from 'app/shopClass/shop.component';
-import { ShopService } from 'app/shopClass/shop.service';
-import { ItemComponent } from 'app/itemClass/item.component';
-import { ItemService } from 'app/itemClass/item.service';
+import { FlightComponent } from 'app/flightClass/flight.component';
+import { FlightService } from 'app/flightClass/flight.service';
 import { DndModule } from 'ng2-dnd';
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShopComponent,
-    ItemComponent
+    FlightComponent
   ],
   imports: [
     BrowserModule,
@@ -25,13 +22,11 @@ import { AgmCoreModule } from '@agm/core';
     })
   ],
   providers: [
-    ShopService,
-    ItemService
+    FlightService
   ],
   bootstrap: [
     AppComponent,
-    ShopComponent,
-    ItemComponent
+    FlightComponent
   ]
 })
 export class AppModule { }
