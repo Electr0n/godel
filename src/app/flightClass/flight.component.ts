@@ -11,6 +11,7 @@ export class FlightComponent implements OnInit{
   flightStatus: string;
   flightsOut: Flight[];
   flightsIn: Flight[];
+  p: number = 1;
   
   constructor(private flightService: FlightService){}
 
