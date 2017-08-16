@@ -1,11 +1,91 @@
-.flight__container {
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flight__container, .flight__container-header {
   display: flex;
   flex-direction: row;
   width: 800px;
   justify-content: space-between;
 }
-.wrapper{
+.flight__container{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #28363d;
+  margin-bottom: 4px;
+}
+.flight__container-header {
+  height: 40px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #28363d;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.flight__container-wrapper_center{
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flight__container-wrapper_inner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.flight__container-index, .flight__container-gate, .flight__container-time,
+  .flight__container-status, .flight__container-terminal, .flight__container-name{
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-color: #28363d;
+  border-width: 0px;
+  border-right-width: 1px;
+}
+.flight__container-name{
+  width: 370px;
+}
+.flight__container-terminal{
+  min-width: 70px;
+}
+.flight__container-status{
+  min-width: 180px;
+}
+.flight__container-index{
+  min-width: 40px;
+}
+.flight__container-gate{
+  min-width: 50px;
+}
+.flight__container-time{
+  min-width: 80px;
+  border-width: 0px;
+}
+.flight__tabs {
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+.flight__tabs-in, .flight__tabs-out{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #28363d;
+  font-size: 16px;
+  font-family: "Myriad Pro";
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.pressed{
+  background-color: #4f061a;
 }

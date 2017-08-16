@@ -8,23 +8,32 @@ import { FlightService } from './flight.service';
   styleUrls: ['./flight.component.css']
 })
 export class FlightComponent implements OnInit{
-  flights: Flight[];
-  flightStatus: boolean;
+  flightStatus: string;
   flightsOut: Flight[];
   flightsIn: Flight[];
   
   constructor(private flightService: FlightService){}
 
-  getFlights(): void{
-    this.flights = this.flightService.getFlights();
+  getFlightsOut(): void{
+    this.flightsOut = this.flightService.getFlightsOut();
+  }
+  getFlightsIn(): void{
+    this.flightsIn = this.flightService.getFlightsIn();
   }
 
   ngOnInit(): void{
-    if (this.flights === undefined){
-      this.getFlights();
-      // this.getFlightsOut();
-      // this.getFlightIn();  
+    if (this.flightsOut === undefined){
+      this.getFlightsOut();
     }
+    if (this.flightsIn === undefined){
+      this.getFlightsIn();
+    }
+    if (this.flightStatus === undefined){
+      this.flightStatus = 'arrival';
+    }
+  }
 
+  switchTab(s: string): void {
+    this.flightStatus = s;
   }
 }

@@ -1,22 +1,77 @@
 <div class="wrapper">
-  <div class="flight__container">
-    <div>№</div>
-    <div>Name</div>
-    <div>Status</div>
-    <div>Terminal</div>
-    <div>Time</div>
-    <div>Halle</div>
-  </div>
-</div>
-<div *ngFor="let flight of flights; let i = index">
-  <div class="wrapper">
-    <div class="flight__container">
-      <div>{{i + 1}}</div>
-      <div>{{flight.apname}}</div>
-      <div>{{flight.status}}</div>
-      <div>{{flight.terminal}}</div>
-      <div>{{flight.sched}}</div>
-      <div>{{flight.halle}}</div>
+  <div class="flight__tabs">
+    <div class="flight__tabs-in"
+    (click)="switchTab('arrival')"
+    [ngClass]="{'pressed': flightStatus === 'arrival'}">
+      In
+    </div>
+    <div class="flight__tabs-out"
+    (click)="switchTab('departure')"
+    [ngClass]="{'pressed': flightStatus === 'departure'}">
+      Out
     </div>
   </div>
+  <div class="flight__container-header">
+    <div class="flight__container-index">№</div>
+    <div class="flight__container-wrapper_center">
+      <div class="flight__container-status">Status</div>
+      <div class="flight__container-wrapper_inner">
+        <div class="flight__container-terminal">Terminal</div>
+        <div class="flight__container-name">Name</div>
+      </div>
+      <div class="flight__container-gate">Gate</div>
+    </div>
+    <div class="flight__container-time">Time</div>
+  </div>
+  <ng-container *ngIf="flightStatus === 'departure'">
+    <div *ngFor="let flight of flightsOut; let i = index">
+      <div class="wrapper">
+        <div class="flight__container">
+          <div class="flight__container-index">{{i + 1}}</div>
+          <div class="flight__container-status">
+            <ng-container *ngIf="flight.status !== ''; else noData">
+              {{flight.status}}
+            </ng-container>
+            <ng-template #noData>
+              N/A
+            </ng-template>
+          </div>
+          <div class="flight__container-terminal">{{flight.terminal}}</div>
+          <div class="flight__container-name">{{flight.apname}}</div>
+          <div class="flight__container-gate">
+            <ng-container *ngIf="flight.gate !== ''; else noData">
+              {{flight.gate}}
+            </ng-container>
+            <ng-template #noData>
+              N/A
+            </ng-template>
+          </div>
+          <div class="flight__container-time">{{flight.sched.substring(11, 16)}}</div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="flightStatus === 'arrival'">
+    <div *ngFor="let flight of flightsIn; let i = index">
+      <div class="wrapper">
+        <div class="flight__container">
+          <div class="flight__container-index">{{i + 1}}</div>
+          <div class="flight__container-status">
+            N/A
+          </div>
+          <div class="flight__container-terminal">{{flight.terminal}}</div>
+          <div class="flight__container-name">{{flight.apname}}</div>
+          <div class="flight__container-gate">
+            <ng-container *ngIf="flight.gate !== ''; else noData">
+              {{flight.gate}}
+            </ng-container>
+            <ng-template #noData>
+              N/A
+            </ng-template>
+          </div>
+          <div class="flight__container-time">{{flight.sched.substring(11, 16)}}</div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </div>
