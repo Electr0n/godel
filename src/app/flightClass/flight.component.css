@@ -96,6 +96,20 @@
   justify-content: space-between;
   width: 240px;
 }
+.container__filterTime{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
+}
+.container__filterTime-label{
+  min-width: 100px;
+}
+.container__filterTime > input {
+  width: 60px;
+}
 .pressed{
   background-color: #4f061a;
 }
