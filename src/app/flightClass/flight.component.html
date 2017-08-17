@@ -11,6 +11,10 @@
       Out
     </div>
   </div>
+  <div class="container__search">
+    <div class="container__search-label"> Search: </div>
+    <input type="text" [(ngModel)]="flightFilter.apname" placeholder="type country">
+  </div>
   <div class="flight__container-header">
     <div class="flight__container-index">№</div>
     <div class="flight__container-wrapper_center">
@@ -88,7 +92,7 @@
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </ng-container>
   <ng-container *ngIf="flightStatus === 'arrival'">
-    <div *ngFor="let flight of flightsIn | orderBy: sortedColumn : sortedReverse | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+    <div *ngFor="let flight of flightsIn | filterBy: flightFilter | orderBy: sortedColumn : sortedReverse | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
       <div class="wrapper">
         <div class="flight__container">
           <div class="flight__container-index">{{i + 1}}</div>

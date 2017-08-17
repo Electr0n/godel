@@ -7,6 +7,7 @@ import { FlightComponent } from 'app/flightClass/flight.component';
 import { FlightService } from 'app/flightClass/flight.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { OrderModule } from 'ngx-order-pipe';
     BrowserModule,
     FormsModule,
     NgxPaginationModule,
-    OrderModule
+    OrderModule,
+    Ng2FilterPipeModule
   ],
   providers: [
     FlightService
