@@ -15,6 +15,8 @@ export class FlightComponent implements OnInit{
   sortedColumn: string;
   sortedReverse: boolean;
   flightFilter: any = { apname: ''};
+  hoursFilter: number;
+  minsFilter: number;
   
   constructor(private flightService: FlightService){}
 
@@ -40,6 +42,12 @@ export class FlightComponent implements OnInit{
     }
     if (this.sortedReverse === undefined){
       this.sortedReverse = false;
+    }
+    if (this.hoursFilter === undefined){
+      this.hoursFilter = 0;
+    }
+    if (this.minsFilter === undefined){
+      this.minsFilter = 0;
     }
   }
 
