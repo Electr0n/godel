@@ -48,31 +48,35 @@
       <div class="wrapper">
         <div class="flight__container">
           <div class="flight__container-index">{{i + 1}}</div>
-          <div class="flight__container-status"
-            [ngClass]="{'sorted': sortedColumn === 'status'}">
-            <ng-container *ngIf="flight.status !== ''; else noData">
-              {{flight.status}}
-            </ng-container>
-            <ng-template #noData>
-              N/A
-            </ng-template>
-          </div>
-          <div class="flight__container-terminal"
-            [ngClass]="{'sorted': sortedColumn === 'terminal'}">
-            {{flight.terminal}}
-          </div>
-          <div class="flight__container-name"
-            [ngClass]="{'sorted': sortedColumn === 'apname'}">
-            {{flight.apname}}
-          </div>
-          <div class="flight__container-gate"
-            [ngClass]="{'sorted': sortedColumn === 'gate'}">
-              <ng-container *ngIf="flight.gate !== ''; else noData">
-                {{flight.gate}}
+          <div class="flight__container-wrapper_center">
+            <div class="flight__container-status"
+              [ngClass]="{'sorted': sortedColumn === 'status'}">
+              <ng-container *ngIf="flight.status !== ''; else noData">
+                {{flight.status}}
               </ng-container>
               <ng-template #noData>
                 N/A
               </ng-template>
+            </div>
+            <div class="flight__container-wrapper_inner">
+              <div class="flight__container-terminal"
+                [ngClass]="{'sorted': sortedColumn === 'terminal'}">
+                {{flight.terminal}}
+              </div>
+              <div class="flight__container-name"
+                [ngClass]="{'sorted': sortedColumn === 'apname'}">
+                {{flight.apname}}
+              </div>
+            </div>
+            <div class="flight__container-gate"
+              [ngClass]="{'sorted': sortedColumn === 'gate'}">
+                <ng-container *ngIf="flight.gate !== ''; else noData">
+                  {{flight.gate}}
+                </ng-container>
+                <ng-template #noData>
+                  N/A
+                </ng-template>
+            </div>
           </div>
           <div class="flight__container-time"
             [ngClass]="{'sorted': sortedColumn === 'sched'}">
@@ -88,25 +92,29 @@
       <div class="wrapper">
         <div class="flight__container">
           <div class="flight__container-index">{{i + 1}}</div>
-          <div class="flight__container-status"
-            [ngClass]="{'sorted': sortedColumn === 'status'}">
-            N/A
-          </div>
-          <div class="flight__container-terminal"
-            [ngClass]="{'sorted': sortedColumn === 'terminal'}">{{flight.terminal}}
-            </div>
-          <div class="flight__container-name"
-            [ngClass]="{'sorted': sortedColumn === 'apname'}">
-            {{flight.apname}}
-          </div>
-          <div class="flight__container-gate"
-            [ngClass]="{'sorted': sortedColumn === 'gate'}">
-            <ng-container *ngIf="flight.gate !== ''; else noData">
-              {{flight.gate}}
-            </ng-container>
-            <ng-template #noData>
+          <div class="flight__container-wrapper_center">
+            <div class="flight__container-status"
+              [ngClass]="{'sorted': sortedColumn === 'status'}">
               N/A
-            </ng-template>
+            </div>
+            <div class="flight__container-wrapper_inner">
+              <div class="flight__container-terminal"
+                [ngClass]="{'sorted': sortedColumn === 'terminal'}">{{flight.terminal}}
+                </div>
+              <div class="flight__container-name"
+                [ngClass]="{'sorted': sortedColumn === 'apname'}">
+                {{flight.apname}}
+              </div>
+            </div>
+            <div class="flight__container-gate"
+              [ngClass]="{'sorted': sortedColumn === 'gate'}">
+              <ng-container *ngIf="flight.gate !== ''; else noData">
+                {{flight.gate}}
+              </ng-container>
+              <ng-template #noData>
+                N/A
+              </ng-template>
+            </div>
           </div>
           <div class="flight__container-time"
             [ngClass]="{'sorted': sortedColumn === 'sched'}">
