@@ -88,6 +88,14 @@
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+.container__search{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
+}
 .pressed{
   background-color: #4f061a;
 }

@@ -14,6 +14,7 @@ export class FlightComponent implements OnInit{
   p: number = 1;
   sortedColumn: string;
   sortedReverse: boolean;
+  flightFilter: any = { apname: ''};
   
   constructor(private flightService: FlightService){}
 
